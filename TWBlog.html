@@ -13893,7 +13893,7 @@ See[[reimagin-tags.bundle]]
 <pre>;page
 {{$:/menu/visitors-main/menu-tabs/resources/editions}}</pre>
 </div>
-<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200617002810901" creator="Designer" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200617002834132" modifier="Designer" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Roman Numerals play">
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200617002810901" creator="Designer" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200617003318906" modifier="Designer" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Roman Numerals play">
 <pre>\define sample()  VI VII IX X XII XIII XV XVII XVIII
 \define in-decimal(roman)
 &quot;$roman$&quot; 
@@ -13907,8 +13907,9 @@ See[[reimagin-tags.bundle]]
 \end
 \define roman-20() I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII XIX XX
 
-&lt;$macrocall $name=in-decimal roman=&quot;XIII&quot;/&gt;
+`&lt;$macrocall $name=in-decimal roman=&quot;XIII&quot;/&gt;`
 &lt;hr&gt;
+
 
 &lt;$list filter=&quot;[range[1,20]]&quot; variable=decimal&gt;
    &lt;$set name=roman-num filter=&lt;&lt;roman-20&gt;&gt; select={{{ [&lt;decimal&gt;subtract[1]] }}}&gt;
@@ -13918,7 +13919,10 @@ See[[reimagin-tags.bundle]]
 
 &lt;$list filter=&quot;[&lt;sample&gt;split[ ]]&quot; variable=input&gt;
    &lt;&lt;input&gt;&gt;=&lt;$macrocall $name=in-roman roman=&lt;&lt;input&gt;&gt;/&gt;
-&lt;/$list&gt;</pre>
+&lt;/$list&gt;
+&lt;hr&gt;
+
+;Investigaet</pre>
 </div>
 <div created="20200606050237269" creator="Designer" modified="20200606050801882" modifier="Designer" tags="[[visitor how to]]" title="Save your Settings">
 <pre>;This blog uses local storage in your browser to save your settings and keep track of your reading
