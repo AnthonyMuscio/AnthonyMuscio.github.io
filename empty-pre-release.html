@@ -10352,11 +10352,15 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div created="20200618015751423" creator="Designer" modified="20200618015751423" modifier="Designer" title="$:/GitLab/Username">
 <pre>AnthonyMuscio</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[$:/plugins/tiddlywiki/internals]]
-# [[HelloThere]]</pre>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;&lt;pre style=\&quot;box-sizing: border-box; font-family: SFMono-Regular, Consolas, &amp;quot;Liberation Mono&amp;quot;, Menlo, Courier, monospace; font-size: 15px; display: block; margin-top: 1em; margin-bottom: 1em; word-break: normal; overflow-wrap: break-word; white-space: pre-wrap; background-color: rgb(245, 245, 245); border: 1px solid rgb(204, 204, 204); padding: 0px 3px 2px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\&quot;&gt;&lt;code style=\&quot;box-sizing: border-box; font-family: SFMono-Regular, Consolas, &amp;quot;Liberation Mono&amp;quot;, Menlo, Courier, monospace; font-size: 1em; color: inherit; background-color: inherit; border: none; white-space: pre-wrap; padding: 0px; border-radius: 3px;\&quot;&gt;&amp;lt;$action-sendmessage $message=\&quot;tm-zip-render-file\&quot; $param=\&quot;MyZipTiddler\&quot; filename=\&quot;my/newfilename.txt\&quot; tiddler=\&quot;HelloThere\&quot; template=\&quot;The content\&quot; mode=\&quot;block\&quot; output=\&quot;text/plain\&quot;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&quot;
+        }
+    }
+}</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10625,8 +10629,8 @@ $tw.wiki.addTiddlers($(json-tiddlers)$);
 <div created="20200616044034404" modified="20200616044034404" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Updates</pre>
 </div>
-<div created="20200617045150357" creator="Designer" modified="20200617045150357" modifier="Designer" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+<div created="20200617045150357" creator="Designer" modified="20200618021021538" modifier="Designer" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
 <div created="20200617045525213" creator="Designer" modified="20200617045717201" modifier="Designer" title="$:/state/tab--79950421">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -10652,11 +10656,11 @@ $tw.wiki.addTiddlers($(json-tiddlers)$);
 <div created="20200616044645015" creator="D" modified="20200616044646491" modifier="Designe" title="$:/status/UserName">
 <pre>Designer</pre>
 </div>
-<div created="20200618020621054" creator="Designer" list="MyZipTiddler [[New playground Tiddler]] $:/Import $:/ControlPanel [[Welcome to the TiddlyWiki Pre-release Playground]]" modified="20200618020621054" modifier="Designer" title="$:/StoryList">
+<div created="20200618020621054" creator="Designer" list="$:/AdvancedSearch MyZipTiddler [[New playground Tiddler]] $:/Import $:/ControlPanel [[Welcome to the TiddlyWiki Pre-release Playground]]" modified="20200618021012907" modifier="Designer" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20200616044602672" creator="Designer" modified="20200617045139786" modifier="Designer" title="$:/temp/advancedsearch">
-<pre>library</pre>
+<div created="20200616044602672" creator="Designer" modified="20200618021019149" modifier="Designer" title="$:/temp/advancedsearch">
+<pre>[haschanged[]]</pre>
 </div>
 <div title="$:/temp/BrowserStorage/Log">
 <pre>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage $:/plugins/tiddlywiki/jszip $:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/prerelease/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/prerelease/library/v5.1.23/index.html/$:/plugins/tiddlywiki/xmldom $:/Import $:/HistoryList</pre>
@@ -12936,8 +12940,8 @@ CC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}" requires-reload="no" serv
 <div created="20200616044031896" creator="Designer" modified="20200617045617241" modifier="Designer" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200616044553961" creator="Designer" modified="20200618020618543" modifier="Designer" title="$:/temp/search">
-<pre>MyZipTiddler</pre>
+<div created="20200616044553961" creator="Designer" modified="20200618021012906" modifier="Designer" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200617045615937" creator="Designer" modified="20200617045615937" modifier="Designer" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -13142,11 +13146,16 @@ Finding code that works flawlessly after just two or three years is magical enou
 <div title="MyZipTiddler" type="application/zip">
 <pre>UEsDBAoAAAAAABFh0lAAAAAAAAAAAAAAAAASAAAAbXkvbmV3ZmlsZW5hbWUudHh0UEsBAhQACgAAAAAAEWHSUAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAG15L25ld2ZpbGVuYW1lLnR4dFBLBQYAAAAAAQABAEAAAAAwAAAAAAA=</pre>
 </div>
-<div created="20200618020455858" creator="Designer" modified="20200618020831342" modifier="Designer" tags="" title="New playground Tiddler">
+<div created="20200618020455858" creator="Designer" modified="20200618021255048" modifier="Designer" tags="" title="New playground Tiddler">
 <pre>&lt;$button&gt;
-&lt;$action-sendmessage $message=&quot;tm-zip-render-file&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;my/newfilename.txt&quot; tiddler=&quot;HelloThere&quot; template=&quot;The content&quot; mode=&quot;block&quot; output=&quot;text/plain&quot;/&gt;
-&lt;$action-sendmessage $message=&quot;tm-zip-download&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;myzipfile.zip&quot;/&gt;
+&lt;$list filter=&quot;[haschanged[]]&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-zip-render-file&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;my/newfilename.txt&quot; tiddler=&lt;&lt;currentTiddler&gt;&gt;  template=&quot;The content&quot; mode=&quot;block&quot; output=&quot;text/plain&quot;/&gt;
 Zip
+&lt;/$button&gt;
+
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-zip-download&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;myzipfile.zip&quot;/&gt;
+Download
 &lt;/$button&gt;</pre>
 </div>
 <div created="20200615041201435" creator="Designer" modified="20200616045131104" modifier="Designer" tags="[[Welcome to the TiddlyWiki Pre-release Playground]]" title="Playful workflows">
