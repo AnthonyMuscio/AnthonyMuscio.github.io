@@ -293,6 +293,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/browser-storage/settings</li>
 
+<li>$:/plugins/tiddlywiki/internals</li>
+
 <li>$:/plugins/tiddlywiki/jszip</li>
 
 <li>$:/PSaT/bookmarkletMaker</li>
@@ -817,9 +819,15 @@ Error message and password prompt
 
 <li>Designer</li>
 
+<li>Draft of 'New playground Tiddler' by Designer</li>
+
 <li>Feedback</li>
 
+<li>HelloThere</li>
+
 <li>Imported Download Buttons</li>
+
+<li>MyZipTiddler</li>
 
 <li>New playground Tiddler</li>
 
@@ -10346,22 +10354,11 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div created="20200618015751423" creator="Designer" modified="20200618015751423" modifier="Designer" title="$:/GitLab/Username">
 <pre>AnthonyMuscio</pre>
 </div>
-<div message-$:/plugins/tiddlywiki/internals="" plugin-type="import" status="pending" title="$:/Import" type="application/json">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/tiddlywiki/internals&quot;: {
-            &quot;text&quot;: &quot;{\n    \&quot;tiddlers\&quot;: {\n        \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree\&quot;,\n            \&quot;tags\&quot;: \&quot;$:/tags/EditPreview\&quot;,\n            \&quot;list-after\&quot;: \&quot;$:/core/ui/EditTemplate/body/preview/output\&quot;,\n            \&quot;caption\&quot;: \&quot;parse tree\&quot;,\n            \&quot;text\&quot;: \&quot;\\\\define preview(mode)\\n&lt;$wikify name=\\\&quot;preview-text\\\&quot; text={{!!text}} type={{!!type}} mode=\\\&quot;$mode$\\\&quot; output=\\\&quot;parsetree\\\&quot;&gt;\\n&lt;pre&gt;\\n&lt;code&gt;\\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\\n&lt;/code&gt;\\n&lt;/pre&gt;\\n&lt;/$wikify&gt;\\n\\\\end\\n\\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\\n\&quot;\n        },\n        \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw\&quot;,\n            \&quot;tags\&quot;: \&quot;$:/tags/EditPreview\&quot;,\n            \&quot;caption\&quot;: \&quot;raw HTML\&quot;,\n            \&quot;list-after\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree\&quot;,\n            \&quot;text\&quot;: \&quot;&lt;pre&gt;&lt;code&gt;&lt;$view field=\\\&quot;text\\\&quot; format=\\\&quot;htmlwikified\\\&quot; /&gt;&lt;/code&gt;&lt;/pre&gt;\\n\&quot;\n        },\n        \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared\&quot;,\n            \&quot;text\&quot;: \&quot;\\\\define body()\\n\\nMode: &lt;$select tiddler=\\\&quot;$(tv-mode-configuration)$\\\&quot; default=\\\&quot;block\\\&quot;&gt;\\n&lt;option value=\\\&quot;inline\\\&quot;&gt;Inline&lt;/option&gt;\\n&lt;option value=\\\&quot;block\\\&quot;&gt;Block&lt;/option&gt;\\n&lt;/$select&gt;\\n\\n&lt;$macrocall $name=\\\&quot;preview\\\&quot; mode={{$(tv-mode-configuration)$}}/&gt;\\n\\\\end\\n\\n&lt;div class=\\\&quot;tc-internal-tree-preview-wrapper\\\&quot;&gt;\\n\\n&lt;div class=\\\&quot;tc-internal-tree-preview\\\&quot;&gt;\\n\\n&lt;$vars tv-mode-configuration=&lt;&lt;qualify \\\&quot;$:/state/internals/preview/mode\\\&quot;&gt;&gt;&gt;\\n\\n&lt;&lt;body&gt;&gt;\\n\\n&lt;/$vars&gt;\\n\\n&lt;/div&gt;\\n\\n&lt;/div&gt;\\n\&quot;\n        },\n        \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree\&quot;,\n            \&quot;tags\&quot;: \&quot;$:/tags/EditPreview\&quot;,\n            \&quot;caption\&quot;: \&quot;widget tree\&quot;,\n            \&quot;list-after\&quot;: \&quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree\&quot;,\n            \&quot;text\&quot;: \&quot;\\\\define preview(mode)\\n&lt;$wikify name=\\\&quot;preview-text\\\&quot; text={{!!text}} type={{!!type}} mode=\\\&quot;$mode$\\\&quot; output=\\\&quot;widgettree\\\&quot;&gt;\\n&lt;pre&gt;\\n&lt;code&gt;\\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\\n&lt;/code&gt;\\n&lt;/pre&gt;\\n&lt;/$wikify&gt;\\n\\\\end\\n\\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\\n\&quot;\n        },\n        \&quot;$:/plugins/tiddlywiki/internals/readme\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/readme\&quot;,\n            \&quot;text\&quot;: \&quot;This plugin adds features to help explore the internals of TiddlyWiki:\\n\\n* New preview panes showing:\\n** the parse tree\\n** the widget tree\\n** the raw HTML output\\n\\nThe first two include a dropdown for choosing block vs. inline parsing mode.\\n\&quot;\n        },\n        \&quot;$:/plugins/tiddlywiki/internals/styles\&quot;: {\n            \&quot;title\&quot;: \&quot;$:/plugins/tiddlywiki/internals/styles\&quot;,\n            \&quot;tags\&quot;: \&quot;$:/tags/Stylesheet\&quot;,\n            \&quot;text\&quot;: \&quot;\\\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock\\n\&quot;\n        }\n    }\n}&quot;,
-            &quot;version&quot;: &quot;5.1.23-prerelease&quot;,
-            &quot;type&quot;: &quot;application/json&quot;,
-            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals&quot;,
-            &quot;plugin-type&quot;: &quot;plugin&quot;,
-            &quot;name&quot;: &quot;Internals&quot;,
-            &quot;list&quot;: &quot;readme&quot;,
-            &quot;description&quot;: &quot;Tools for exploring the internals of TiddlyWiki&quot;,
-            &quot;dependents&quot;: &quot;&quot;
-        }
-    }
-}</pre>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/plugins/tiddlywiki/internals]]
+# [[HelloThere]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10440,6 +10437,46 @@ The tiddler $:/temp/BrowserStorage/Log contains a log of the tiddlers that were 
 
 &lt;&lt;list-links &quot;[enlist{$:/temp/BrowserStorage/Log}sort[]]&quot;&gt;&gt;
 </pre>
+</div>
+<div dependents="" description="Tools for exploring the internals of TiddlyWiki" list="readme" name="Internals" plugin-type="plugin" title="$:/plugins/tiddlywiki/internals" type="application/json" version="5.1.23-prerelease">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/EditTemplate/body/preview/output&quot;,
+            &quot;caption&quot;: &quot;parse tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;parsetree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;raw HTML&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;text&quot;: &quot;&lt;pre&gt;&lt;code&gt;&lt;$view field=\&quot;text\&quot; format=\&quot;htmlwikified\&quot; /&gt;&lt;/code&gt;&lt;/pre&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;,
+            &quot;text&quot;: &quot;\\define body()\n\nMode: &lt;$select tiddler=\&quot;$(tv-mode-configuration)$\&quot; default=\&quot;block\&quot;&gt;\n&lt;option value=\&quot;inline\&quot;&gt;Inline&lt;/option&gt;\n&lt;option value=\&quot;block\&quot;&gt;Block&lt;/option&gt;\n&lt;/$select&gt;\n\n&lt;$macrocall $name=\&quot;preview\&quot; mode={{$(tv-mode-configuration)$}}/&gt;\n\\end\n\n&lt;div class=\&quot;tc-internal-tree-preview-wrapper\&quot;&gt;\n\n&lt;div class=\&quot;tc-internal-tree-preview\&quot;&gt;\n\n&lt;$vars tv-mode-configuration=&lt;&lt;qualify \&quot;$:/state/internals/preview/mode\&quot;&gt;&gt;&gt;\n\n&lt;&lt;body&gt;&gt;\n\n&lt;/$vars&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;widget tree&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;widgettree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/readme&quot;,
+            &quot;text&quot;: &quot;This plugin adds features to help explore the internals of TiddlyWiki:\n\n* New preview panes showing:\n** the parse tree\n** the widget tree\n** the raw HTML output\n\nThe first two include a dropdown for choosing block vs. inline parsing mode.\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/styles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock\n&quot;
+        }
+    }
+}</pre>
 </div>
 <div author="Stuart Knightley, David Duponchel, Franz Buchinger, António Afonso" dependents="" description="JSZip library" list="readme docs examples license" name="JSZip" plugin-type="plugin" title="$:/plugins/tiddlywiki/jszip" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -10617,7 +10654,7 @@ $tw.wiki.addTiddlers($(json-tiddlers)$);
 <div created="20200616044645015" creator="D" modified="20200616044646491" modifier="Designe" title="$:/status/UserName">
 <pre>Designer</pre>
 </div>
-<div list="[[New playground Tiddler]] $:/Import $:/ControlPanel [[Welcome to the TiddlyWiki Pre-release Playground]]" title="$:/StoryList">
+<div created="20200618020621054" creator="Designer" list="MyZipTiddler [[Draft of 'New playground Tiddler' by Designer]] $:/Import $:/ControlPanel [[Welcome to the TiddlyWiki Pre-release Playground]]" modified="20200618020621054" modifier="Designer" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200616044602672" creator="Designer" modified="20200617045139786" modifier="Designer" title="$:/temp/advancedsearch">
@@ -12901,8 +12938,8 @@ CC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}" requires-reload="no" serv
 <div created="20200616044031896" creator="Designer" modified="20200617045617241" modifier="Designer" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200616044553961" creator="Designer" modified="20200617045139786" modifier="Designer" title="$:/temp/search">
-<pre></pre>
+<div created="20200616044553961" creator="Designer" modified="20200618020618543" modifier="Designer" title="$:/temp/search">
+<pre>MyZipTiddler</pre>
 </div>
 <div created="20200617045615937" creator="Designer" modified="20200617045615937" modifier="Designer" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -13045,8 +13082,61 @@ CC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}" requires-reload="no" serv
 <div created="20200616044659067" creator="Designer" modified="20200616044721990" modifier="Designer" title="Designer">
 <pre>Designed by [[TW Tones|https://anthonymuscio.github.io/]] </pre>
 </div>
+<div created="20200618020455858" creator="Designer" draft.of="New playground Tiddler" draft.title="New playground Tiddler" modified="20200618020607991" modifier="Designer" tags="" title="Draft of 'New playground Tiddler' by Designer">
+<pre>&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-zip-render-file&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;my/newfilename.txt&quot; tiddler=&quot;HelloThere&quot; template=&quot;The content&quot; mode=&quot;block&quot; output=&quot;text/plain&quot;/&gt;
+Zip
+&lt;/$button&gt;</pre>
+</div>
 <div created="20200615051158483" creator="Designer" modified="20200616045131104" modifier="Designer" tags="[[Welcome to the TiddlyWiki Pre-release Playground]]" title="Feedback">
 <pre>;Please open this [[google forum thread|https://groups.google.com/forum/?hl=en#!topic/tiddlywiki-by-psat/OPVwImSatuc]] to discuss this edition.</pre>
+</div>
+<div created="20130822170200000" list="[[A Gentle Guide to TiddlyWiki]] [[Discover TiddlyWiki]] [[Some of the things you can do with TiddlyWiki]] [[Ten reasons to switch to TiddlyWiki]] Examples [[What happened to the original TiddlyWiki?]] [[HelloThumbnail - TWEUM2017]]" modified="20200415160825341" tags="TableOfContents" title="HelloThere" type="text/vnd.tiddlywiki">
+<pre>''Have you ever had the feeling that your head is not quite big enough to hold everything you need to remember?''
+
+Welcome to TiddlyWiki, a unique [[non-linear|Philosophy of Tiddlers]] notebook for [[capturing|Creating and editing tiddlers]], [[organising|Structuring TiddlyWiki]] and [[sharing|Sharing your tiddlers with others]] complex information.
+
+Use it to keep your [[to-do list|TaskManagementExample]], to plan an [[essay or novel|&quot;TiddlyWiki for Scholars&quot; by Alberto Molina]], or to organise your wedding. Record every thought that crosses your brain, or build a flexible and responsive website.
+
+&lt;div style=&quot;font-size:0.7em;text-align:center;margin-top:2em;margin-bottom:2em;&quot;&gt;
+&lt;&lt;list-thumbnails filter:&quot;[tag[HelloThumbnail]]&quot; width:&quot;168&quot; height:&quot;95&quot;&gt;&gt;
+&lt;/div&gt;
+
+Unlike conventional online services, TiddlyWiki lets you choose where to keep your data, guaranteeing that in the decades to come you will [[still be able to use|Future Proof]] the notes you take today.
+
+&lt;div style=&quot;font-size:0.7em;text-align:center;margin:3em auto;&quot;&gt;
+&lt;a href=&quot;https://groups.google.com/group/TiddlyWiki&quot; class=&quot;tc-btn-big-green&quot; style=&quot;border-radius:4px;background-color:#FF8C19;&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+{{$:/core/images/help}} Forum
+&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/c/JeremyRuston&quot; class=&quot;tc-btn-big-green&quot; style=&quot;border-radius:4px;background-color:#e52d27;&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+{{$:/core/images/video}} ~YouTube
+&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/TiddlyWiki&quot; class=&quot;tc-btn-big-green&quot; style=&quot;border-radius:4px;background-color:#5E9FCA;&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+{{$:/core/images/twitter}} Twitter
+&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Jermolene/TiddlyWiki5&quot; class=&quot;tc-btn-big-green&quot; style=&quot;border-radius:4px;background-color:#444;&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+{{$:/core/images/github}} ~GitHub
+&lt;/a&gt;
+&lt;a href=&quot;https://gitter.im/TiddlyWiki/public&quot; class=&quot;tc-btn-big-green&quot; style=&quot;border-radius:4px;background-color:#753a88;background-image:linear-gradient(to left,#cc2b5e,#753a88);&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+{{$:/core/images/gitter}} Gitter
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;&lt;&lt;.tc-big-quote
+''The ~TiddlyWiki is the best software I've ever found for organising my ideas.''
+
+It's well worth spending an hour or so playing with it to see how it can help you. This will be time well-spent and will change how you think and how you organise your ideas.
+&lt;&lt;&lt; [[Joe Armstrong, Co-inventor of Erlang|https://joearms.github.io/]]
+
+&lt;&lt;&lt;.tc-big-quote
+''~TiddlyWiki gets a Gearhead rating of 6 out of 5 (it's that good).''
+
+Finding code that works flawlessly after just two or three years is magical enough but after seven years?!
+&lt;&lt;&lt; [[Mark Gibbs, Network World|http://www.networkworld.com/article/3028098/open-source-tools/tiddlywiki-a-free-open-source-wiki-revisited.html]]
+
+&lt;div style=&quot;font-size:0.7em;text-align:center;margin:3em auto;&quot;&gt;
+&lt;a href=&quot;https://www.producthunt.com/posts/tiddlywiki-2?utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-tiddlywiki-2&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=193414&amp;theme=dark&amp;period=daily&quot; alt=&quot;TiddlyWiki - The open source non-linear notebook | Product Hunt Embed&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250px&quot; height=&quot;54px&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
 </div>
 <div created="20200615042037401" creator="Designer" modified="20200615042046385" modifier="Designer" status="complete" title="Imported Download Buttons">
 <pre>The following tiddlers were imported:
@@ -13057,8 +13147,14 @@ CC-BY-NC-SA - {{$:/themes/wikilabs/slant-01/license}}" requires-reload="no" serv
 # [[$:/PSaT/downloads]]
 # [[$:/PSaT/downloads/download-haschanged]]</pre>
 </div>
-<div created="20200618020455858" creator="Designer" modified="20200618020459839" modifier="Designer" tags="" title="New playground Tiddler">
-<pre>&lt;$action-sendmessage $message=&quot;tm-zip-render-file&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;my/newfilename.txt&quot; tiddler=&quot;HelloThere&quot; template=&quot;The content&quot; mode=&quot;block&quot; output=&quot;text/plain&quot;/&gt;</pre>
+<div created="20200618020626814" creator="Designer" modified="20200618020626814" modifier="Designer" title="MyZipTiddler" type="application/zip">
+<pre>UEsDBAoAAAAAAMJg0lAAAAAAAAAAAAAAAAASAAAAbXkvbmV3ZmlsZW5hbWUudHh0UEsBAhQACgAAAAAAwmDSUAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAG15L25ld2ZpbGVuYW1lLnR4dFBLBQYAAAAAAQABAEAAAAAwAAAAAAA=</pre>
+</div>
+<div created="20200618020455858" creator="Designer" modified="20200618020601903" modifier="Designer" tags="" title="New playground Tiddler">
+<pre>&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-zip-render-file&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;my/newfilename.txt&quot; tiddler=&quot;HelloThere&quot; template=&quot;The content&quot; mode=&quot;block&quot; output=&quot;text/plain&quot;/&gt;
+Zip
+&lt;/$button&gt;</pre>
 </div>
 <div created="20200615041201435" creator="Designer" modified="20200616045131104" modifier="Designer" tags="[[Welcome to the TiddlyWiki Pre-release Playground]]" title="Playful workflows">
 <pre>;The following is a list of playful workflows to help you play with macros and plugins you find.
