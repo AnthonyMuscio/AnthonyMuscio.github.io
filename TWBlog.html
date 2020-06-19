@@ -867,6 +867,8 @@ Error message and password prompt
 
 <li>TiddlyWiki</li>
 
+<li>TiddlyWiki on Microsoft Windows</li>
+
 <li>Tony's Tiny Tips (Republished)</li>
 
 <li>TW5</li>
@@ -12478,7 +12480,7 @@ Hi</pre>
 <div created="20200605081405444" creator="Designer" modified="20200617072722042" modifier="TW Tone" title="$:/status/UserName">
 <pre>TW Tones</pre>
 </div>
-<div created="20200618223459670" creator="TW Tones" list="$:/AdvancedSearch $:/PSaT/new-tiddlers/macros $:/PSaT/new-tiddlers [[New Page 1]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]]" modified="20200618223703296" modifier="TW Tones" title="$:/StoryList">
+<div created="20200618223459670" creator="TW Tones" list="[[TiddlyWiki on Microsoft Windows]] $:/PSaT/new-tiddlers/macros $:/PSaT/new-tiddlers [[New Page 1]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]]" modified="20200618223703296" modifier="TW Tones" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200605072812722" modified="20200605075139944" tags="" title="$:/system-object/menu-item/info">
@@ -12555,8 +12557,8 @@ Hi</pre>
     }
 }</pre>
 </div>
-<div created="20200605075752218" creator="Designer" modified="20200618222942942" modifier="TW Tones" title="$:/temp/last-created">
-<pre>New Page 1</pre>
+<div created="20200605075752218" creator="Designer" modified="20200619040314937" modifier="TW Tones" title="$:/temp/last-created">
+<pre>New Post</pre>
 </div>
 <div created="20200605071130922" creator="Designer" modified="20200606052751793" modifier="Designer" title="$:/temp/NewTagName">
 <pre></pre>
@@ -14047,6 +14049,34 @@ Unlike conventional online services, TiddlyWiki lets you choose where to keep yo
 a non-linear personal web notebook
 
 https://tiddlywiki.com/#
+
+
+</pre>
+</div>
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200619040314935" creator="TW Tones" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200619041924779" modifier="TW Tones" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="TiddlyWiki on Microsoft Windows">
+<pre>;It is wonderful that tiddlywiki operates on a range of platforms
+:However many  users use Windows and Nothing else so this blog in for those who only or mostly use windows.
+
+;Recommendation
+*Install Timimi in Chrome and Firefox
+*For local file and folder access and to keep you wiki offline Install TiddlyDesktop and Open your wikis there
+*Use TiddlyServer, configure the settings.json to point to various folders and use your browser to locate any wiki in the folders severed
+**Also use this to access wikis on your local area network or another device on the network (once at a time)
+*Install Bob.exe if you want to build multi-user/access wikis
+**Also use this to access wikis on your local area network or another device on the network (more than one at a time permitted)
+
+;However windows users may want to go further
+*Install nodeJS and create and serve your wikis off your computer, optionally on the local network
+
+;A Tip when configuring Servers
+*If you do not intend LAN access assign the server to use a local host address
+**The address 127.0.0.1 is used by default, and other services may attempt to share it, you can use different port numbers
+**However the local host address are large in number so you can use 127.0.4.81 as well when configuring you server
+***Bobs single file saver will use 127.0.0.1 on a custom port.
+*Whilst you can use the Server address 0.0.0.0 to share on the lan you can also
+**Use the IP Address your computer is issued, then if you are on a different network and dont get that address it will not be accessible
+**You can add additional IP Addresses to you computer (using static addresses) and you can set any server to on of these estra addresses, so LAN users need a different IP address for each server. You can also move it to another computer while moving the IP address as well.
+*If you have a DNS server consider allocating a Static IP Address and configure a local name such as bob.local that points to the servers IP Address
 
 
 </pre>
