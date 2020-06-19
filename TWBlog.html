@@ -813,6 +813,8 @@ Error message and password prompt
 
 <li>New Page</li>
 
+<li>New Page 1</li>
+
 <li>new-tiddlers.bundle</li>
 
 <li>NextN</li>
@@ -10460,11 +10462,30 @@ Error message and password prompt
 <div caption="google (Brands)" tags="$:/tags/Image [[Font Awesome 5]] Brands" title="$:/images/fa5/brands/google">
 <pre>&lt;svg class=&quot;tc-image-google tc-image-button&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 488 512&quot;&gt;&lt;path d=&quot;M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[$:/PSaT/to-top]]
-# [[$:/PSaT/to-top/icon]]</pre>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/PSaT/to-top&quot;: {
+            &quot;created&quot;: &quot;20200608052831623&quot;,
+            &quot;creator&quot;: &quot;PSaT&quot;,
+            &quot;text&quot;: &quot;&lt;div style=\&quot;text-align: center;\&quot;&gt;\n&lt;a href=\&quot;#\&quot; title=\&quot;Jump to top of page\&quot; &gt;{{$:/PSaT/to-top/icon}}&lt;/a&gt;\n&lt;/div&gt;\nHi&quot;,
+            &quot;title&quot;: &quot;$:/PSaT/to-top&quot;,
+            &quot;tags&quot;: &quot;$:/tags/SideBarSegment $:/tags/BelowStory&quot;,
+            &quot;modifier&quot;: &quot;PSaT&quot;,
+            &quot;modified&quot;: &quot;20200608060325846&quot;
+        },
+        &quot;$:/PSaT/to-top/icon&quot;: {
+            &quot;text&quot;: &quot;&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; viewBox=\&quot;0 0 24 24\&quot; width=\&quot;64\&quot;&gt;&lt;path d=\&quot;M12.71,6.29a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-4,4a1,1,0,1,0,1.42,1.42L11,9.41V21a1,1,0,0,0,2,0V9.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42ZM19,2H5A1,1,0,0,0,5,4H19a1,1,0,0,0,0-2Z\&quot;/&gt;&lt;/svg&gt;&quot;,
+            &quot;type&quot;: &quot;image/svg+xml&quot;,
+            &quot;title&quot;: &quot;$:/PSaT/to-top/icon&quot;,
+            &quot;modifier&quot;: &quot;PSaT&quot;,
+            &quot;modified&quot;: &quot;20200608053448743&quot;,
+            &quot;image-source&quot;: &quot;top-arrow-to-top.svg&quot;,
+            &quot;creator&quot;: &quot;PSaT&quot;,
+            &quot;created&quot;: &quot;20200608053209753&quot;
+        }
+    }
+}</pre>
 </div>
 <div created="20200606042847621" creator="Designer" modified="20200606042906539" modifier="Designer" title="$:/Import/reimaginTags">
 <pre>The following tiddlers were imported:
@@ -12086,7 +12107,7 @@ $message$
 &lt;/svg&gt;
 </pre>
 </div>
-<div created="20200528020347125" creator="Designer" modified="20200602081144724" modifier="Designer" tags="$:/tags/Macro" title="$:/PSaT/new-tiddlers/macros">
+<div created="20200528020347125" creator="Designer" modified="20200619000409154" modifier="TW Tones" tags="$:/tags/Macro" title="$:/PSaT/new-tiddlers/macros">
 <pre>\define new-field(fieldname) $fieldname$={{{ [all[current]get[_$fieldname$]] ~[all[current]get[$fieldname$]] }}}
 \define all-tags() {{!!tags}} {{_tags}}
 \define new-tiddler-actions()
@@ -12457,7 +12478,7 @@ Hi</pre>
 <div created="20200605081405444" creator="Designer" modified="20200617072722042" modifier="TW Tone" title="$:/status/UserName">
 <pre>TW Tones</pre>
 </div>
-<div created="20200616082038211" list="[[TWEXE Executable TiddlyWiki's]] [[Roman Numerals play]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[SoundCite - embed inline audio behind text]] [[Tony's Tiny Tips (Republished)]]" modified="20200617011852418" title="$:/StoryList">
+<div created="20200618223459670" creator="TW Tones" list="$:/AdvancedSearch $:/PSaT/new-tiddlers/macros $:/PSaT/new-tiddlers [[New Page 1]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]]" modified="20200618223703296" modifier="TW Tones" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200605072812722" modified="20200605075139944" tags="" title="$:/system-object/menu-item/info">
@@ -12473,8 +12494,8 @@ Hi</pre>
 <pre>:Tag used to place items tagged with &lt;&lt;tag $:/tags/ViewToolbar2&gt;&gt; on a second Toolbar below the view toolbar
 :see $:/PSaT/ViewToolbar2</pre>
 </div>
-<div created="20200605072005294" creator="Designer" modified="20200611051705149" modifier="Author" title="$:/temp/advancedsearch">
-<pre>page</pre>
+<div created="20200605072005294" creator="Designer" modified="20200618223659772" modifier="TW Tones" title="$:/temp/advancedsearch">
+<pre>new</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -12534,8 +12555,8 @@ Hi</pre>
     }
 }</pre>
 </div>
-<div created="20200605075752218" creator="Designer" modified="20200617072127681" modifier="Author" title="$:/temp/last-created">
-<pre>New Post</pre>
+<div created="20200605075752218" creator="Designer" modified="20200618222942942" modifier="TW Tones" title="$:/temp/last-created">
+<pre>New Page 1</pre>
 </div>
 <div created="20200605071130922" creator="Designer" modified="20200606052751793" modifier="Designer" title="$:/temp/NewTagName">
 <pre></pre>
@@ -13487,7 +13508,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20200605070915945" dependents="" description="Basic theme" modified="20200605070915945" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.22">
 <pre></pre>
 </div>
-<div created="20200605072003569" creator="Designer" modified="20200611051705149" modifier="Author" title="$:/temp/search">
+<div created="20200605072003569" creator="Designer" modified="20200618223659772" modifier="TW Tones" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200605070915902" modified="20200605070915902" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
@@ -13825,6 +13846,9 @@ Perhaps this is a value of tiddlywiki it has the power to take black and white d
 </pre>
 </div>
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" caption="Page {{!!created}}" class="" created="20200606052514488" creator="Designer" description="Regular page" keywords="" last-created="New Tiddler from template" modified="20200606054010431" modifier="Designer" object-type="page" page-featured-image="" page-foot="" page-head="" source="$:/PSaT/new-tiddlers/template/page" tags="" title="New Page">
+<pre></pre>
+</div>
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" caption="Page {{!!created}}" class="" created="20200618222942940" creator="TW Tones" description="Regular page" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200618222942940" modifier="TW Tones" object-type="page" page-featured-image="" page-foot="" page-head="" source="$:/PSaT/new-tiddlers/template/page" tags="" title="New Page 1">
 <pre></pre>
 </div>
 <div created="20200605075427882" creator="Designer" description="new-tiddlers from template" filter="[list[$:/StoryList]][prefix[$:/PSaT/new-tiddlers]]" modified="20200605075504883" modifier="Designer" tags="$:/tags/Filter" title="new-tiddlers.bundle">
