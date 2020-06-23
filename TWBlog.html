@@ -809,9 +809,9 @@ Error message and password prompt
 
 <li>Designer notes</li>
 
-<li>Draft of 'New blog entry 1' by Author</li>
-
 <li>Draft of 'New Post' by Author</li>
+
+<li>Draft of 'publish-date' by Author</li>
 
 <li>Github Location's</li>
 
@@ -830,8 +830,6 @@ Error message and password prompt
 <li>New blog entry</li>
 
 <li>New blog entry ?</li>
-
-<li>New blog entry 1</li>
 
 <li>New Page</li>
 
@@ -12582,7 +12580,7 @@ Hi</pre>
 <div created="20200605081405444" creator="Designer" modified="20200623004527273" modifier="Autho" title="$:/status/UserName">
 <pre>Author</pre>
 </div>
-<div created="20200623014849798" creator="Author" list="[[Draft of 'New Post' by Author]] publish-date [[Draft of 'New blog entry 1' by Author]] $:/ControlPanel $:/plugins/kixam/datepicker" modified="20200623014854947" modifier="Author" title="$:/StoryList">
+<div created="20200623014849798" creator="Author" list="[[Draft of 'New Post' by Author]] [[Draft of 'publish-date' by Author]] $:/ControlPanel $:/plugins/kixam/datepicker" modified="20200623014854947" modifier="Author" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200605072812722" modified="20200605075139944" tags="" title="$:/system-object/menu-item/info">
@@ -13902,11 +13900,18 @@ using $:/tags/MenuBar__
 *$:/plugins/wikilabs/link-to-tabs
 </pre>
 </div>
-<div created="20200623014910962" creator="Author" draft.of="New blog entry 1" draft.title="New blog entry 1" modified="20200623015056246" modifier="Author" publish-date="20200612000000000" tags="" title="Draft of 'New blog entry 1' by Author">
-<pre>&lt;$edit-date field=&quot;publish-date&quot;&gt;</pre>
-</div>
-<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200623015108614" creator="Author" description="Regular post" draft.of="New Post" draft.title="New Post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200623015108617" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Draft of 'New Post' by Author">
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200623015108614" creator="Author" description="Regular post" draft.of="New Post" draft.title="New Post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200623015635759" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Draft of 'New Post' by Author">
 <pre></pre>
+</div>
+<div created="20200623015033723" creator="Author" draft.of="publish-date" draft.title="publish-date" modified="20200623015747300" modifier="Author" tags="$:/tags/ViewTemplate" title="Draft of 'publish-date' by Author">
+<pre>&lt;$list filter=&quot;[all[current]object-type[post]] [all[current]object-type[page]]&quot; variable=nul&gt;
+   &lt;$list filter=&quot;[all[current]has[publish-date]]&quot;&gt;
+        Published: &lt;$view field=publish-date format=date template=&quot;DDth MMM YYYY&quot;/&gt;&lt;br&gt;
+   &lt;/$list&gt;
+   &lt;$list filter=&quot;[all[current]!has[publish-date]]&quot;&gt;
+        Published: &lt;$view field=publish-date format=date template=&quot;DDth MMM YYYY&quot;/&gt;&lt;br&gt;
+   &lt;/$list&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20200615052523273" creator="Author" modified="20200615052743265" modifier="Author" tags="" title="Github Location's">
 <pre>[[This blog|https://anthonymuscio.github.io/TWBlog.html]]
@@ -13994,16 +13999,13 @@ This is I believe enough to turn fragments into a philosophical subject. Part of
 Perhaps this is a value of tiddlywiki it has the power to take black and white deterministic software and allow it to grow into more than that, through emergence into relational, perspective driven, subjective objects, there by transcending the deterministic nature of computers. The subjectivity enters because of the observer being present and part of the system, and multiple observers may see different things, getting closer to an art work.
 </pre>
 </div>
-<div created="20200623014910962" creator="Author" modified="20200623015021270" modifier="Author" publish-date="20200612000000000" tags="" title="New blog entry 1">
-<pre>&lt;$edit-date field=&quot;publish-date&quot;&gt;</pre>
-</div>
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" caption="Page {{!!created}}" class="" created="20200606052514488" creator="Designer" description="Regular page" keywords="" last-created="New Tiddler from template" modified="20200606054010431" modifier="Designer" object-type="page" page-featured-image="" page-foot="" page-head="" source="$:/PSaT/new-tiddlers/template/page" tags="" title="New Page">
 <pre></pre>
 </div>
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" caption="Page {{!!created}}" class="" created="20200618222942940" creator="TW Tones" description="Regular page" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200618222942940" modifier="TW Tones" object-type="page" page-featured-image="" page-foot="" page-head="" source="$:/PSaT/new-tiddlers/template/page" tags="" title="New Page 1">
 <pre></pre>
 </div>
-<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200623015108614" creator="Author" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200623015108614" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="New Post">
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200623015108614" creator="Author" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200623015613806" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" publish-date="20200617000000000" source="$:/PSaT/new-tiddlers/template/post" tags="" title="New Post">
 <pre></pre>
 </div>
 <div created="20200605075427882" creator="Designer" description="new-tiddlers from template" filter="[list[$:/StoryList]][prefix[$:/PSaT/new-tiddlers]]" modified="20200605075504883" modifier="Designer" tags="$:/tags/Filter" title="new-tiddlers.bundle">
@@ -14050,7 +14052,7 @@ Perhaps this is a value of tiddlywiki it has the power to take black and white d
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200615052834463" creator="Author" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200615063428172" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Proposed Playground TiddlyWiki">
 <pre>[[Playground Wiki|https://anthonymuscio.github.io/playground.html]]</pre>
 </div>
-<div created="20200623015033723" creator="Author" modified="20200623015542422" modifier="Author" tags="" title="publish-date">
+<div created="20200623015033723" creator="Author" modified="20200623015620550" modifier="Author" tags="" title="publish-date">
 <pre>&lt;$list filter=&quot;[all[current]object-type[post]] [all[current]object-type[page]]&quot; variable=nul&gt;
    &lt;$list filter=&quot;[all[current]!has[publish-date]]&quot;&gt;
         Published: &lt;$view field=publish-date format=date template=&quot;DDth MMM YYYY&quot;/&gt;&lt;br&gt;
