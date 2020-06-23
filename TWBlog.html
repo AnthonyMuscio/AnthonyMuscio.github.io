@@ -387,6 +387,16 @@ Error message and password prompt
 
 <li>$:/PSaT/designer/search/controlPanel</li>
 
+<li>$:/PSaT/downloads</li>
+
+<li>$:/PSaT/downloads/download-empty</li>
+
+<li>$:/PSaT/downloads/download-full</li>
+
+<li>$:/PSaT/downloads/download-haschanged</li>
+
+<li>$:/PSaT/downloads/macros</li>
+
 <li>$:/PSaT/edit-user</li>
 
 <li>$:/PSaT/EmptyStory</li>
@@ -10474,7 +10484,12 @@ Error message and password prompt
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
-</pre>
+
+# [[$:/PSaT/downloads/download-empty]]
+# [[$:/PSaT/downloads/download-full]]
+# [[$:/PSaT/downloads/macros]]
+# [[$:/PSaT/downloads]]
+# [[$:/PSaT/downloads/download-haschanged]]</pre>
 </div>
 <div created="20200606042847621" creator="Designer" modified="20200606042906539" modifier="Designer" title="$:/Import/reimaginTags">
 <pre>The following tiddlers were imported:
@@ -11723,6 +11738,96 @@ $:/tags/AboveStory $:/tags/AdvancedSearch $:/tags/AdvancedSearch/FilterButton $:
 <div created="20200605081439789" creator="Designer" modified="20200611040405843" modifier="Author" title="$:/PSaT/designer/search/controlPanel">
 <pre>$:/tags/AdvancedSearch</pre>
 </div>
+<div created="20200221040610704" creator="Quick Config" modified="20200221051013125" modifier="Quick Config" tags="" title="$:/PSaT/downloads">
+<pre>&lt;h1&gt;~TiddlyWiki files&lt;/h1&gt;
+&lt;h2&gt;HTML&lt;/h2&gt;
+
+://Standard .html files, requires download saving or &quot;saver&quot;//
+:&lt;&lt;download-full-button&gt;&gt; &lt;&lt;download-empty-button&gt;&gt;&lt;br&gt;
+:`&lt;&lt;download-full-button&gt;&gt; &lt;&lt;download-empty-button&gt;&gt;`
+
+&lt;h2&gt;HTA&lt;/h2&gt;
+
+://Windows only .hta files &quot;HTML application file&quot;, self saving on Windows//
+:&lt;&lt;download-full-button ext:&quot;hta&quot;&gt;&gt; &lt;&lt;download-empty-button ext:&quot;hta&quot;&gt;&gt;
+:`&lt;&lt;download-full-button ext:&quot;hta&quot;&gt;&gt; &lt;&lt;download-empty-button ext:&quot;hta&quot;&gt;&gt;`
+
+&lt;h2&gt;TW&lt;/h2&gt;
+
+://Custom  .tw file containing html opens in whatever the file association directs.//
+:&lt;&lt;download-full-button ext:&quot;tw&quot;&gt;&gt; &lt;&lt;download-empty-button ext:&quot;tw&quot;&gt;&gt;
+:`&lt;&lt;download-full-button ext:&quot;tw&quot;&gt;&gt; &lt;&lt;download-empty-button ext:&quot;tw&quot;&gt;&gt;`
+
+&lt;h1&gt;Tiddler bundles&lt;/h1&gt;
+&lt;h2&gt;JSON&lt;/h2&gt;
+
+:&lt;&lt;download-haschanged-button&gt;&gt;
+:`&lt;&lt;download-haschanged-button&gt;&gt;`
+
+&lt;h2&gt;Local Storage&lt;/h2&gt;
+
+&lt;h2&gt;Local Storage + haschanged&lt;/h2&gt;
+
+&lt;h2&gt;Filtered tiddlers&lt;/h2&gt;
+
+:&lt;&lt;download-filter-button &quot;[prefix[$:/PSaT/downloads]]&quot;&gt;&gt;
+:`&lt;&lt;download-filter-button &quot;[prefix[$:/PSaT/downloads]]&quot;&gt;&gt;`</pre>
+</div>
+<div created="20200221035734428" creator="Quick Config" modified="20200221042111997" modifier="Quick Config" source="$:/editions/tw5.com/download-full from tiddlywiki.com" tags="" title="$:/PSaT/downloads/download-empty">
+<pre>\define saveTiddlerFilter()
+[[$:/core]] [[$:/isEncrypted]] [[$:/themes/tiddlywiki/snowwhite]] [[$:/themes/tiddlywiki/vanilla]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]]
+\end
+\define savingEmpty()
+yes
+\end
+{{$:/core/templates/tiddlywiki5.html}}
+</pre>
+</div>
+<div created="20200221035823552" creator="Quick Config" modified="20200221044353251" modifier="Quick Config" source="$:/PSaT/downloads/download-empty" tags="" title="$:/PSaT/downloads/download-full">
+<pre>\define saveTiddlerFilter()
+[all[]]
+\end
+\define savingEmpty()
+yes
+\end
+{{$:/core/templates/tiddlywiki5.html}}
+</pre>
+</div>
+<div created="20200221045059832" creator="Quick Config" description="Download All haschanged items" extension=".json" modified="20200221045220075" modifier="Quick Config" tags="$:/tags/Exporter" title="$:/PSaT/downloads/download-haschanged">
+<pre>\define renderContent()
+&lt;$text text=&lt;&lt;jsontiddlers filter:&quot;&quot;&quot;[haschanged[]]&quot;&quot;&quot;&gt;&gt;/&gt;
+\end
+&lt;&lt;renderContent&gt;&gt;
+</pre>
+</div>
+<div created="20200221034808410" creator="Quick Config" macro-download-empty-button="&lt;&lt;download-empty-button [name] [ext] [button]&gt;&gt; extension default html or use hta, tw etc" macro-download-full-button="&lt;&lt;download-full-button [ext]&gt;&gt; extension default html or use hta, tw etc" modified="20200221050953891" modifier="Quick Config" tags="$:/tags/Macro" title="$:/PSaT/downloads/macros">
+<pre>\define download-full-button(name:&quot;tiddlywiki&quot; ext:&quot;html&quot; button:&quot;Download full&quot;)
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/PSaT/downloads/download-full&quot; filename=&quot;$name$.$ext$&quot;/&gt;
+$button$ {{$:/core/images/save-button}}
+&lt;/$button&gt;
+\end
+\define download-empty-button(name:&quot;empty&quot; ext:&quot;html&quot; button:&quot;Download empty&quot;)
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/PSaT/downloads/download-empty&quot; filename=&quot;$name$.$ext$&quot;/&gt;
+$button$ V&lt;&lt;version&gt;&gt; {{$:/core/images/save-button}}
+&lt;/$button&gt;
+\end
+\define download-haschanged-button(name:&quot;haschanged&quot; ext:&quot;json&quot; button:&quot;Download [haschanged[]]&quot;)
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/PSaT/downloads/download-haschanged&quot; filename=&quot;$name$.$ext$&quot;/&gt;
+$button$ &lt;$text text={{{ [haschanged[]count[]] }}}/&gt; tiddlers {{$:/core/images/save-button}}
+&lt;/$button&gt;
+\end
+\define download-filter-button(filter name:&quot;filteredsave&quot; ext:&quot;json&quot; button:&quot;Download filtered&quot;)
+&lt;$set name=exportFilter value=&quot;$filter$&quot; emptyMessage=&quot;[haschanged[]]&quot;&gt;
+&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/core/templates/exporters/JsonFile&quot; filename=&quot;$name$.$ext$&quot;/&gt;
+$button$ {{$:/core/images/save-button}}
+&lt;/$button&gt;
+&lt;/$set&gt;
+\end</pre>
+</div>
 <div created="20200509072714192" creator="2020509-17:07" modified="20200611041022680" modifier="Author" tags="$:/tags/SideBarSegment" title="$:/PSaT/edit-user">
 <pre>&lt;$list filter=&quot;[{$:/config/designer-mode}match[yes]]&quot; variable=nul&gt;
 User: &lt;$edit-text tiddler=&quot;$:/status/UserName&quot; tag=input size=20/&gt; &lt;$button tooltip=&quot;set user to time to track changes&quot;&gt;&lt;$action-setfield $tiddler=&quot;$:/status/UserName&quot; text=&lt;&lt;now &quot;YYYYMM0DD-0hh:0mm&quot;&gt;&gt;/&gt;
@@ -12455,8 +12560,8 @@ Hi</pre>
 <div created="20200616041312145" creator="Author" modified="20200616041312145" modifier="Author" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200605071306705" creator="Designer" modified="20200617002808600" modifier="Author" title="$:/state/tab/sidebar--595412856">
-<pre>$:/PSaT/new-tiddlers/sideBar</pre>
+<div created="20200605071306705" creator="Designer" modified="20200623014420872" modifier="Author" title="$:/state/tab/sidebar--595412856">
+<pre>$:/PSaT/Designer-tools/Sidebar</pre>
 </div>
 <div created="20200605075202519" creator="Designer" modified="20200606034858779" modifier="Designer" title="$:/state/toc/TableOfContents-Home--118161433">
 <pre>open</pre>
@@ -12467,7 +12572,7 @@ Hi</pre>
 <div created="20200605081405444" creator="Designer" modified="20200623004527273" modifier="Autho" title="$:/status/UserName">
 <pre>Author</pre>
 </div>
-<div created="20200622144137000" creator="TW Tones" list="[[Interesting observation]] $:/ControlPanel [[Tiddlywiki is a PN-CMS]] [[Announcing TiddlyWiki Playground]] [[What am I thinking off?]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[TiddlyWiki on Microsoft Windows]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]]" modified="20200623014003601" modifier="Author" title="$:/StoryList">
+<div created="20200622144137000" creator="TW Tones" list="$:/Import $:/ControlPanel [[Tiddlywiki is a PN-CMS]] [[Announcing TiddlyWiki Playground]] [[What am I thinking off?]] [[Under Construction]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[TiddlyWiki on Microsoft Windows]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]]" modified="20200623014354240" modifier="Author" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200605072812722" modified="20200605075139944" tags="" title="$:/system-object/menu-item/info">
