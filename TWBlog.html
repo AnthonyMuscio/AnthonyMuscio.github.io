@@ -235,6 +235,8 @@ Error message and password prompt
 
 <li>$:/images/fa5/brands/google</li>
 
+<li>$:/Import</li>
+
 <li>$:/Import/reimaginTags</li>
 
 <li>$:/isEncrypted</li>
@@ -306,6 +308,8 @@ Error message and password prompt
 <li>$:/PSaT/blog/object/viewTemplate/post</li>
 
 <li>$:/PSaT/blog/viewTemplate</li>
+
+<li>$:/PSaT/BlogTool/macros</li>
 
 <li>$:/PSaT/bookmarkletMaker</li>
 
@@ -819,8 +823,6 @@ Error message and password prompt
 
 <li>Draft of 'select-tag' by Author</li>
 
-<li>Draft of 'tiddlername' by Author</li>
-
 <li>Github Location's</li>
 
 <li>Hide read items</li>
@@ -830,6 +832,8 @@ Error message and password prompt
 <li>Interesting observation</li>
 
 <li>library</li>
+
+<li>Macro Parameters</li>
 
 <li>Mini-tool: Move to new Window</li>
 
@@ -918,6 +922,8 @@ Error message and password prompt
 <li>Tiddlywiki is a PN-CMS</li>
 
 <li>TiddlyWiki on Microsoft Windows</li>
+
+<li>TiddlyWiki Performance</li>
 
 <li>Tony's Tiny Tips (Republished)</li>
 
@@ -10525,6 +10531,11 @@ Error message and password prompt
 <div caption="google (Brands)" tags="$:/tags/Image [[Font Awesome 5]] Brands" title="$:/images/fa5/brands/google">
 <pre>&lt;svg class=&quot;tc-image-google tc-image-button&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 488 512&quot;&gt;&lt;path d=&quot;M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z&quot;/&gt;&lt;/svg&gt;</pre>
 </div>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/PSaT/BlogTool/macros]]</pre>
+</div>
 <div created="20200606042847621" creator="Designer" modified="20200606042906539" modifier="Designer" title="$:/Import/reimaginTags">
 <pre>The following tiddlers were imported:
 
@@ -11297,6 +11308,27 @@ respond wikimode
 &lt;$transclude tiddler={{{ [&lt;object-type&gt;addprefix[$:/PSaT/blog/object/viewTemplate/]] }}} mode=block/&gt;
 &lt;/$list&gt;
 </pre>
+</div>
+<div created="20200327121253282" creator="Tony" modified="20200624232244657" modifier="Tony" subject-tags="" tags="$:/tags/Macro" title="$:/PSaT/BlogTool/macros">
+<pre>\define blog-here()
+&lt;span&gt;{{||$:/core/ui/Buttons/new-journal-here}} {{||$:/core/ui/Buttons/new-here}}&lt;/span&gt;
+&lt;hr&gt;
+&lt;$list filter=&quot;[tag&lt;currentTiddler&gt;!has[draft.of]!sort[created]]&quot;&gt;
+
+&lt;div style=&quot;break-inside: avoid;&quot;&gt;
+&lt;div style=&quot;border: 1px solid black; border-style: inset; padding: 10px; padding-top: 3px;  border-radius: 5px;&quot;&gt;
+
+&lt;span style=&quot;font-size: 200%;&quot;&gt;&lt;$link/&gt;&lt;/span&gt;
+&lt;span style=&quot;font-size: 80%;&quot;&gt; &lt;$view field=created format=date template=&quot;ddd DDth MMM&quot;/&gt;&lt;/span&gt;
+&lt;hr&gt;
+
+&lt;$transclude mode=block/&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/$list&gt;
+\end</pre>
 </div>
 <div created="20191118002204248" modified="20191118004620890" tags="" title="$:/PSaT/bookmarkletMaker">
 <pre>;save-as-bookmarklet(title,filter)
@@ -12600,7 +12632,7 @@ Hi</pre>
 <div created="20200616041312145" creator="Author" modified="20200623020354431" modifier="Author" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20200605071306705" creator="Designer" modified="20200623020312941" modifier="Author" title="$:/state/tab/sidebar--595412856">
+<div created="20200605071306705" creator="Designer" modified="20200626063621954" modifier="publish" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200605075202519" creator="Designer" modified="20200606034858779" modifier="Designer" title="$:/state/toc/TableOfContents-Home--118161433">
@@ -12612,7 +12644,7 @@ Hi</pre>
 <div created="20200605081405444" creator="Designer" modified="20200624050927868" modifier="publis" title="$:/status/UserName">
 <pre>publish</pre>
 </div>
-<div created="20200623045202350" creator="Author" list="publish-date [[Draft of 'tiddlername' by Author]] [[Calling tiddlers]] special.svg [[Tiddlywiki is a PN-CMS]] [[New blog entry 3]] status-field [[New blog entry 2]] [[Draft of 'select-tag' by Author]] read-date [[Under Construction]] [[Announcing TiddlyWiki Playground]] [[Interesting observation]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[New Post]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[TiddlyWiki on Microsoft Windows]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]] [[What am I thinking off?]]" modified="20200624051226429" modifier="publish" title="$:/StoryList">
+<div created="20200625230038846" creator="publish" list="[[Macro Parameters]] [[TiddlyWiki Performance]] Home [[Under Construction]] [[Announcing TiddlyWiki Playground]] [[Interesting observation]] [[Mini-tool: Move to new Window]] [[Minimum Viable Product]] [[New Post]] [[Proposed Playground TiddlyWiki]] [[Roman Numerals play]] [[SoundCite - embed inline audio behind text]] [[TiddlyWiki on Microsoft Windows]] [[Tony's Tiny Tips (Republished)]] [[TWEXE Executable TiddlyWiki's]] [[What am I thinking off?]]" modified="20200625230038846" modifier="publish" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200605072812722" modified="20200605075139944" tags="" title="$:/system-object/menu-item/info">
@@ -12689,8 +12721,8 @@ Hi</pre>
     }
 }</pre>
 </div>
-<div created="20200605075752218" creator="Designer" modified="20200623020027574" modifier="Author" title="$:/temp/last-created">
-<pre>New Post</pre>
+<div created="20200605075752218" creator="Designer" modified="20200625234057741" modifier="publish" title="$:/temp/last-created">
+<pre>New Post 1</pre>
 </div>
 <div created="20200605071130922" creator="Designer" modified="20200623045229950" modifier="Author" title="$:/temp/NewTagName">
 <pre></pre>
@@ -13971,15 +14003,6 @@ Change the ions used for the button states above
 Set the tool tip for on and Off buttons
 --&gt; </pre>
 </div>
-<div created="20200624020954244" creator="Author" draft.of="tiddlername" draft.title="tiddlername" modified="20200624022326023" modifier="Author" tags="" title="Draft of 'tiddlername' by Author">
-<pre>\define pipe() |
-\define codeTiddler() {{{ [&lt;transclusion&gt;split&lt;pipe&gt;nth[2]] }}}
-
-&lt;$list filter=&quot;[&lt;codeTiddler&gt;]&quot;&gt;
-
-&lt;/$list&gt;
-</pre>
-</div>
 <div created="20200615052523273" creator="Author" modified="20200615052743265" modifier="Author" tags="" title="Github Location's">
 <pre>[[This blog|https://anthonymuscio.github.io/TWBlog.html]]
 [[Proposed Playground Edition|https://anthonymuscio.github.io/playground.html]] with Local Storage</pre>
@@ -13987,7 +14010,7 @@ Set the tool tip for on and Off buttons
 <div created="20200606050218477" creator="Designer" modified="20200606050218477" modifier="Designer" tags="[[visitor how to]]" title="Hide read items">
 <pre></pre>
 </div>
-<div created="NaNNaNNaNNaNNaNNaNNaN" creator="dev" icon="$:/favicon.ico" modified="20200611031449074" modifier="Author" tags="TableOfContents" title="Home" toc-here="">
+<div created="NaNNaNNaNNaNNaNNaNNaN" creator="dev" icon="$:/favicon.ico" modified="20200625230050612" modifier="publish" tags="TableOfContents" title="Home" toc-here="">
 <pre>&lt;h1&gt;{{$:/SiteTitle}}&lt;/h1&gt;
 &lt;h3&gt;{{$:/SiteSubtitle}}&lt;/h3&gt;
 
@@ -14007,6 +14030,53 @@ It will jump to each tiddler in order on the screen</pre>
 &lt;$list filter=&quot;[all[tiddlers]tag[library]] [all[shadows]tag[$:/tags/PluginLibrary]]&quot;&gt;
 
 &lt;/$list&gt;</pre>
+</div>
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200625234057739" creator="publish" description="Regular post" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200625235337557" modifier="publish" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Macro Parameters">
+<pre>;Basically 
+*If you want to use parameters in a macro they need to be named in the braces macroname(p1 p3) the access them with $p1$ $p2$
+*You can set a default value for parameters with (p1:&quot;defaultvalue&quot;,p2)
+*When calling the macro the `&lt;&lt;macroname&gt;&gt;` is a little limited, only literal strings can be used ` &lt;&lt;macroname &quot;value1&quot; &quot;Value2&quot;&gt;&gt;`
+**Here we are relying on the order of the parameters
+*If you want to pass parameters out of order or only some you need to name them, for example we may want to use the default for p1 and pass only value2
+**We use `&lt;&lt;macroname p2:&quot;value2&quot;&gt;&gt;` uses the same format as inside the definition braces ().
+*The only way to pass variables and field values to a macro is the macrocall widget
+:`&lt;$macrocall $name=&quot;macroname&quot; p1={{!!fieldname)) p2=&lt;&lt;variable&gt;&gt; p3=&lt;&lt;wikifiedmacro&gt;&gt;/&gt;`
+*However variables in the calling wikitext can be accessed in macros with $(varname)$ without being added to the parameters
+*Whenever something is wrapped in $ signs the value is replaced before the wikitext/macro is evaluated., ro $values$ or $(varname)$ may need to be quotes etc..
+:`&lt;$tiddler tiddler=&quot;[[($currentTiddler$)]]&quot;&gt;...` (only in macro definitions)
+*There may be cases where you want to use one of the parameters as if it were a variable 
+:`&lt;$tiddler tiddler=&lt;&lt;__p2__&gt;&gt; &gt;...`
+
+;Other ways to set default value for parameters
+
+```
+\define macroname(p1 p2)
+&lt;$set name=p1 value=&quot;$p1$&quot;emptyValue=&quot;defaultValue&quot;&gt;
+
+Use &lt;&lt;p1&gt;&gt; not $p1$
+
+&lt;/$set&gt;
+\end
+```
+
+
+* See how this converts the parameter to a variable?
+* The default value can be other references or macros as well.
+
+;You can even set the `p1` variable multiple times
+
+```
+&lt;$set name=p1 value=&quot;$p1$&quot;emptyValue=&quot;$(varname)$&quot;&gt;
+&lt;$set name=p1 value=&lt;&lt;p1&gt;&gt;&quot;emptyValue=&quot;defaultValue&quot;&gt;
+
+Use &lt;&lt;p1&gt;&gt; not $p1$
+
+&lt;/$set&gt;&lt;/$set&gt;
+```
+
+In this case if the no parameter is provided, and the first emptyValue &quot;$(varname)$&quot; is itself empty
+Then the defaultvalue will be set
+</pre>
 </div>
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200611042348629" creator="Author" description="Regular post" hide-body="yes" keywords="Open in move to new window" last-created="New Tiddler from template" modified="20200615003140211" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Mini-tool: Move to new Window">
 <pre>&lt;h2&gt;Did you know?&lt;/h2&gt;
@@ -14336,9 +14406,9 @@ $text$
 <div created="20200605092019984" creator="Designer" modified="20200605092038789" modifier="Designer" tags="glossary" title="tiddler">
 <pre>&lt;h2&gt;tiddlers&lt;/h2&gt;</pre>
 </div>
-<div created="20200624020954244" creator="Author" modified="20200624022310476" modifier="Author" tags="" title="tiddlername">
+<div created="20200624020954244" creator="Author" modified="20200624072511907" modifier="publish" tags="" title="tiddlername">
 <pre>\define pipe() |
-\define codeTiddler() &lt;$text text=&quot;&quot;&quot;{{{ [&lt;transclusion&gt;split&lt;pipe&gt;nth[2]] }}}&quot;&quot;&quot;/&gt;
+\define codeTiddler() {{{ [&lt;transclusion&gt;split&lt;pipe&gt;nth[2]] }}}
 
 &lt;$list filter=&quot;[&lt;codeTiddler&gt;]&quot;&gt;
 
@@ -14412,6 +14482,25 @@ Forget __I__ntellectual __P__roperty and adopt infinite possibilities for any co
 
 
 </pre>
+</div>
+<div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200625230252672" creator="publish" description="Regular post" discussion="https://groups.google.com/forum/?hl=en#!topic/tiddlywiki/PwD5oCDyQMk" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200625230443010" modifier="publish" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="TiddlyWiki Performance">
+<pre>There are a number of reasons you may face performance problems both internal and external to tiddlywiki. 
+
+The first thing to know here is a lot you can do to improve performance. Below are questions and information to look for and share but you can also try restarting your device and have less open to see if they influence performance.
+
+However it would help if you did some preliminary research for your own case and shared that information.
+Your device or computer specifications
+The Browser you use
+The Space remaining on your device or computer can slow you down if low
+How much you have open both in the desktop and browser
+
+Then within tiddlywiki a size estimate, 
+File size if single file
+Total tiddlers (see bottom of $:/core/ui/ControlPanel/Info)
+What do you have open in the side bar?
+Do you have a lot of tiddlers open at once?
+Are any very big tiddlers being displayed?
+What are you main plugins</pre>
 </div>
 <div _caption="" _description="" _object-type="" _source="change to this tiddler title" _tags="" _title="" abstract="Used to summarise post when folded, or brief listings" caption="Post {{!!created}}" class="" created="20200611050910468" creator="Author" description="Regular post" discussion="https://groups.google.com/forum/?hl=en#!searchin/tiddlywiki/tony$20Tips%7Csort:date/tiddlywiki/MpcNl_DGeZE/NcVsKQMmBAAJ" hide-body="yes" keywords="" last-created="New Tiddler from template" modified="20200612001657162" modifier="Author" object-type="post" post-featured-image="" post-foot="" post-head="" source="$:/PSaT/new-tiddlers/template/post" tags="" title="Tony's Tiny Tips (Republished)">
 <pre>Tony's Tiny Tips Republished from March 10th 2020 [[TiddlyWiki Forum|https://groups.google.com/forum/?hl=en#!forum/tiddlywiki]]
