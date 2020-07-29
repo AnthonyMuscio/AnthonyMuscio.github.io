@@ -921,6 +921,8 @@ Error message and password prompt
 
 <li>Playful workflows</li>
 
+<li>pre-release-plugins</li>
+
 <li>TableOfContents</li>
 
 <li>Test export</li>
@@ -10842,45 +10844,37 @@ Also create library tiddler?
 *Jeremy for building the [[JSZip plugin|$:/plugins/tiddlywiki/jszip]]
 *See the Discussion I raised [[Tiddlywiki JZIP Plugin and tiddlywiki Libraries|https://groups.google.com/forum/?hl=en#!topic/tiddlywikidev/7l0irgLJOys]]</pre>
 </div>
-<div created="20200729023115201" creator="Designer" modified="20200729030022685" modifier="Designer" tags="$:/tags/Macro" title="$:/PSaT/library-builder/macros">
-<pre>\define oneTiddler()
- &lt;$list
-   filter='[&lt;theTiddler&gt;fields[]] -text +[bl[]]'
- &gt;
-   &lt;br&gt;
-   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;&lt;$view field='title' jsencoded/&gt;&quot;: &quot;&lt;$view tiddler=&lt;&lt;theTiddler&gt;&gt; field=&lt;&lt;currentTiddler&gt;&gt; format=jsencoded/&gt;&quot;,
- &lt;/$list&gt;
- &lt;$list
-   filter='[&lt;theTiddler&gt;fields[]] -text +[bl[]]'
- &gt;
-   &lt;br&gt;
-   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;&lt;$view field='title' jsencoded/&gt;&quot;: &quot;&lt;$view tiddler=&lt;&lt;theTiddler&gt;&gt; field=&lt;&lt;currentTiddler&gt;&gt; format=jsencoded/&gt;&quot;
- &lt;/$list&gt;
-\end
+<div created="20200729023115201" creator="Designer" modified="20200729045122627" modifier="Designer" tags="$:/tags/Macro" title="$:/PSaT/library-builder/macros">
+<pre>\define recipes-folder() {{$:/state/PluginLibrary!!folder}}/recipes/
+\define library-folder() {{$:/state/PluginLibrary!!folder}}/recipes/library/
+\define tiddlers-folder() {{$:/state/PluginLibrary!!folder}}/recipes/library/tiddlers/
+\define package-library()
+:filter: &lt;$edit-text tiddler='$:/state/PluginLibrary' field=filter/&gt;
+:folder: &lt;$edit-text tiddler='$:/state/PluginLibrary' field=folder/&gt; library name &lt;$link to={{$:/state/PluginLibrary!!folder}}/&gt;
+&lt;$wikify name=recipes-folder text=&quot;&quot;&quot;&lt;&lt;recipes-folder&gt;&gt;&quot;&quot;&quot;&gt;
+&lt;$wikify name=library-folder text=&quot;&quot;&quot;&lt;&lt;library-folder&gt;&gt;&quot;&quot;&quot;&gt;
+&lt;$wikify name=tiddlers-folder text=&quot;&quot;&quot;&lt;&lt;tiddlers-folder&gt;&gt;&quot;&quot;&quot;&gt;
+&lt;$wikify name=tiddlersjson-path-filename text=&quot;&quot;&quot;&lt;&lt;library-folder&gt;&gt;tiddlers.json&quot;&quot;&quot;&gt;
+&lt;$set name=tiddlers-path-filename value={{{ [&lt;tiddlers-folder&gt;addsufix[$(currentTiddler)$]encodeuri[]addsuffix[.json]]  }}}&gt;
+&lt;$wikify name=zip-filename text=&quot;&quot;&quot;{{$:/state/PluginLibrary!!folder}}.zip&quot;&quot;&quot;&gt;
 
-\define jsonListing()
-[&lt;br&gt;
-&lt;$list
- filter='[subfilter{$:/state/PluginLibrary!!filter}] +[bl[]]'
- variable=theTiddler
-&gt;
- &amp;nbsp;&amp;nbsp;{
- &lt;&lt;oneTiddler&gt;&gt;
- &lt;br&gt;
- &amp;nbsp;&amp;nbsp;},
- &lt;br&gt;
+:''File name:'' &lt;&lt;zip-filename&gt;&gt;
+:''recipes-folder:'' &lt;&lt;recipes-folder&gt;&gt;
+:''library-folder:'' &lt;&lt;library-folder&gt;&gt;
+:''tiddlers-folder:'' &lt;&lt;tiddlers-folder&gt;&gt;
+
+
+&lt;$button actions=&lt;&lt;zip-actions&gt;&gt; &gt;ZIP to library {{$:/state/PluginLibrary!!folder}}&lt;/$button&gt;
+
+&lt;/$wikify&gt;&lt;/$set&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;
+\end
+\define zip-actions()
+&lt;$action-sendmessage $message=&quot;tm-zip-create&quot; $param={{$:/state/PluginLibrary!!folder}}/&gt;
+&lt;$action-sendmessage $message=&quot;tm-zip-add-text-file&quot;  $param={{$:/state/PluginLibrary!!folder}} filename=&lt;&lt;tiddlersjson-path-filename&gt;&gt; text={{$:/PSaT/library-builder/tiddlers.json}}/&gt;
+&lt;$list filter={{$:/state/PluginLibrary!!filter}}&gt;
+   &lt;$action-sendmessage $message=&quot;tm-zip-add-text-file&quot;  $param={{$:/state/PluginLibrary!!folder}} filename=&lt;&lt;tiddlers-path-filename&gt;&gt; text=&lt;&lt;jsontiddler&gt;&gt;/&gt;
 &lt;/$list&gt;
-&lt;$list
- filter='[subfilter{$:/state/PluginLibrary!!filter}] +[last[]]'
- variable=theTiddler
-&gt;
- &amp;nbsp;&amp;nbsp;{
- &lt;&lt;oneTiddler&gt;&gt;
- &lt;br&gt;
- &amp;nbsp;&amp;nbsp;}
- &lt;br&gt;
-&lt;/$list&gt;
-]
+&lt;$action-sendmessage $message=&quot;tm-zip-download&quot; $param={{$:/state/PluginLibrary!!folder}} filename=&lt;&lt;zip-filename&gt;&gt;/&gt;
 \end</pre>
 </div>
 <div created="20200729030815624" creator="Designer" modified="20200729030920141" modifier="Designer" psat-project="library-builder" tags="$:/tags/Macro" title="$:/PSaT/library-builder/tiddlers.json">
@@ -10912,61 +10906,8 @@ Also create library tiddler?
 
 </pre>
 </div>
-<div created="20200729024134139" creator="Designer" modified="20200729040529512" modifier="Designer" tags="$:/tags/Macro" title="$:/PSaT/library-builder/zip">
-<pre>\define recipes-folder() {{$:/state/PluginLibrary!!folder}}/recipes/
-\define library-folder() {{$:/state/PluginLibrary!!folder}}/recipes/library/
-\define tiddlers-folder() {{$:/state/PluginLibrary!!folder}}/recipes/library/tiddlers/
-\define zip-actions()
-&lt;$wikify name=recipes-folder text=&quot;&quot;&quot;&lt;&lt;recipes-folder&gt;&gt;&quot;&quot;&quot;&gt;
-&lt;$wikify name=library-folder text=&quot;&quot;&quot;&lt;&lt;library-folder&gt;&gt;&quot;&quot;&quot;&gt;
-&lt;$wikify name=tiddlers-folder text=&quot;&quot;&quot;&lt;&lt;tiddlers-folder&gt;&gt;&quot;&quot;&quot;&gt;
-&lt;$wikify name=tiddlersjson-path-filename text=&quot;&quot;&quot;&lt;&lt;library-folder&gt;&gt;tiddlers.json&quot;&quot;&quot;&gt;
-&lt;$wikify name=tiddlers-path-filename text=&quot;&quot;&quot;&lt;&lt;tiddlers-folder&gt;&gt;/$(currentTiddler)$.json&quot;&quot;&quot;&gt;
-
-&lt;$action-sendmessage $message=&quot;tm-zip-create&quot; $param={{$:/state/PluginLibrary!!folder}}/&gt;
-&lt;$action-sendmessage $message=&quot;tm-zip-add-text-file&quot;  $param={{$:/state/PluginLibrary!!folder}} filename=&lt;&lt;tiddlersjson-path-filename&gt;&gt; text={{$:/PSaT/library-builder/tiddlers.json}}/&gt;
-
-&lt;$list filter={{$:/state/PluginLibrary!!filter}}&gt;
-&lt;$action-sendmessage $message=&quot;tm-zip-add-text-file&quot;  $param={{$:/state/PluginLibrary!!folder}} filename=&lt;&lt;tiddlers-path-filename&gt;&gt; text=&lt;&lt;jsontiddler&gt;&gt;/&gt;
-&lt;!--$view field='title' format='urlencoded'/&gt;.json--&gt;
-&lt;/$list&gt;
-
-&lt;$action-sendmessage $message=&quot;tm-zip-download&quot; $param=&quot;MyZipTiddler&quot; filename=&quot;myzipfile.zip&quot;/&gt;
-
-&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;
-\end
-:filter: &lt;$edit-text tiddler='$:/state/PluginLibrary' field=filter/&gt;
-:folder: &lt;$edit-text tiddler='$:/state/PluginLibrary' field=folder/&gt; library name
-:recipes-folder: &lt;&lt;recipes-folder&gt;&gt;
-:library-folder: &lt;&lt;library-folder&gt;&gt;
-:tiddlers-folder: &lt;&lt;tiddlers-folder&gt;&gt;
-
-&lt;$button actions=&lt;&lt;zip-actions&gt;&gt; &gt;ZIP to library {{$:/state/PluginLibrary!!folder}}&lt;/$button&gt;
-
-!! tiddlers.json
-
-''filename:'' &lt;&lt;library-folder&gt;&gt;tiddlers.json
-
-''contents:''
-
-'&lt;&lt;jsonListing&gt;&gt;`
-
-!! Tiddler JSON files:
-
-
-```
-&lt;$list filter={{$:/state/PluginLibrary!!filter}}&gt;
-
----
-''filename:'' &lt;$view field='title' format='urlencoded'/&gt;.json
-
-''contents:''
-
-&lt;$text text=&lt;&lt;jsontiddler&gt;&gt;/&gt;
-&lt;/$list&gt;
-```
-
-
+<div created="20200729024134139" creator="Designer" modified="20200729043829360" modifier="Designer" tags="$:/tags/Macro" title="$:/PSaT/library-builder/zip">
+<pre>&lt;&lt;package-library&gt;&gt;
 </pre>
 </div>
 <div created="20191212025834394" creator="2020509-17:07" list-after="$:/core/ui/SideBarSegments/search" modified="20200509073527732" modifier="2020509-17:07" tags="$:/tags/SideBarSegment" title="$:/PSaT/MultipleImport">
@@ -11325,8 +11266,8 @@ New&lt;/$button&gt;&lt;$button&gt;New from Source&lt;/$button&gt;
 <div created="20200617045713416" creator="Designer" modified="20200618015915432" modifier="Designer" title="$:/state/addplugins/tab-1342078386">
 <pre>$:/config/Pre-release/PluginLibrary</pre>
 </div>
-<div created="20200728004327970" creator="Designer" modified="20200729030056282" modifier="Designer" title="$:/state/plugin-info--1978443522-$:/plugins/tiddlywiki/jszip--59146398">
-<pre>docs</pre>
+<div created="20200728004327970" creator="Designer" modified="20200729045221497" modifier="Designer" title="$:/state/plugin-info--1978443522-$:/plugins/tiddlywiki/jszip--59146398">
+<pre>contents</pre>
 </div>
 <div created="20200616045210197" creator="Designer" modified="20200728003503604" modifier="Designer" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage">
 <pre>no</pre>
@@ -11367,8 +11308,8 @@ New&lt;/$button&gt;&lt;$button&gt;New from Source&lt;/$button&gt;
 <div created="20200616045651770" creator="Designer" modified="20200622151653831" modifier="Designer" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/Gitea</pre>
 </div>
-<div created="20200616043858086" creator="Designer" modified="20200729040323819" modifier="Designer" title="$:/state/tab/sidebar--595412856">
-<pre>$:/PSaT/project-list/sideBar</pre>
+<div created="20200616043858086" creator="Designer" modified="20200729045157475" modifier="Designer" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20200616043900019" modified="20200616043900019" title="$:/state/toc/TableOfContents-Welcome to the TiddlyWiki Playground--118161433">
 <pre>open</pre>
@@ -11382,7 +11323,7 @@ New&lt;/$button&gt;&lt;$button&gt;New from Source&lt;/$button&gt;
 <div created="20200616044645015" creator="D" modified="20200616044646491" modifier="Designe" title="$:/status/UserName">
 <pre>Designer</pre>
 </div>
-<div created="20200728004528256" creator="Designer" list="$:/Import $:/ControlPanel $:/plugins/tiddlywiki/jszip $:/PSaT/library-builder $:/PSaT/library-builder/zip $:/PSaT/library-builder/macros $:/AdvancedSearch [[Test export 1]] [[Test export]] [[Export via ZIP]] $:/core" modified="20200729040307972" modifier="Designer" title="$:/StoryList">
+<div created="20200728004528256" creator="Designer" list="$:/PSaT/library-builder/zip $:/Import $:/ControlPanel $:/plugins/tiddlywiki/jszip $:/PSaT/library-builder $:/PSaT/library-builder/macros $:/AdvancedSearch [[Test export 1]] [[Test export]] [[Export via ZIP]] $:/core" modified="20200729043854182" modifier="Designer" title="$:/StoryList">
 <pre></pre>
 </div>
 <div title="$:/temp/_ZipTiddler" type="application/zip">
@@ -13952,6 +13893,9 @@ Download
 *If you have messed this wiki up &lt;$button message=&quot;tm-clear-browser-storage&quot;&gt;Clear browser storage&lt;/$button&gt; and reload, ''all changes will be removed''.
 
 </pre>
+</div>
+<div title="pre-release-plugins" type="application/zip">
+<pre>UEsDBAoAAAAAAHB2/VCX5w6MDwAAAA8AAAAxAAAAcHJlLXJlbGVhc2UtcGx1Z2lucy9yZWNpcGVzL2xpYnJhcnkvdGlkZGxlcnMuanNvbjw8anNvbkxpc3Rpbmc+PlBLAQIUAAoAAAAAAHB2/VCX5w6MDwAAAA8AAAAxAAAAAAAAAAAAAAAAAAAAAABwcmUtcmVsZWFzZS1wbHVnaW5zL3JlY2lwZXMvbGlicmFyeS90aWRkbGVycy5qc29uUEsFBgAAAAABAAEAXwAAAF4AAAAAAA==</pre>
 </div>
 <div caption="Contents" created="20200301040306125" creator="Designer" list-after="$:/core/ui/SideBar/Open" modified="20200301040552627" modifier="Designer" tags="$:/tags/SideBar" title="TableOfContents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
